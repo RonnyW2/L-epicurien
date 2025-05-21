@@ -1,0 +1,168 @@
+.logo{
+  user-select: none;
+  top:50%;
+  scale: 75%;
+  position: absolute;
+  translate: 0% -50%;
+}
+
+.logo img{
+  position: relative;
+  width: var(--logo-width);
+  height: var(--logo-height);
+}
+
+.logo .name dt{
+  position: absolute;
+  top:100%;
+  left: calc(var(--logo-width)*0.75);
+  translate: 0% -100%;
+  color:var(--text-color);
+  font-weight: bold;
+  font-size:var(--font-size);
+  width: max-content;
+}
+
+.nav-menu{
+  align-items: center;
+  align-content: center;
+}
+
+.nav-menu .nav-menu-elements button{
+  font-weight: bolder;
+  border-radius: 10px;
+  padding:1vw; 
+  border: 0;
+  color:white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-menu-elements form button[type="submit"]{
+  background-color: var(--button-color);
+}
+
+  #nav-menuButton, label[for="nav-menuButton"]{
+    display: none;
+  }
+  .nav-menu{
+    height: fit-content;
+    position: absolute;
+    top:50%;
+    translate:-1% -50%;
+    right: 1%;
+  }
+  .nav-menu .nav-menu-elements{
+    display: flex;
+    gap: 10px;
+  }
+  .nav-menu .nav-menu-elements button,
+  .nav-menu .nav-menu-elements button *{
+    cursor: pointer;
+  }
+  .nav-menu .nav-menu-elements button>label::after{
+    content: "▼";
+    display: inline-block;
+    margin-left: 5px;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
+  }
+  .nav-menu .nav-menu-elements button:focus>label::after,
+  .nav-menu .nav-menu-elements button:has(+.form-area>.login-form>.input-box>input:focus)>label::after,
+  .nav-menu .nav-menu-elements button:has(+ .form-area:focus-within) > label::after{
+    transform: rotate(180deg);
+  }
+
+.form-area {
+  position: absolute;
+  top: 150%;
+  right: 0;
+  transform: scaleY(0);
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+#login:focus + .form-area,.form-area:has(:focus),
+.form-area:focus{
+  transform: scaleY(1);
+}
+
+.login-form,
+.register-form,
+.reserve{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  padding: 30px;
+  box-shadow: 0 0 20px black;
+  border-radius: 10px;
+  width: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 10px 10px 5px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-box label {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+  top: -15px;
+  left: 0;
+  font-size: 12px;
+  color: var(--button-color, gold);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form button {
+  padding: 8px 16px;
+  background-color: var(--button-color, goldenrod);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: darkgoldenrod;
+}
+
+
+.tb{
+  color: white !important;
+  font-size: small;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+.hidden{
+  transform: scaleY(0);
+  padding: 0;
+  height: 0;
+}

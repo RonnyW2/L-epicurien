@@ -1,0 +1,14 @@
+.philisophy>h1,
+.philisophies>div>h2,
+.ambiance>h1,
+.delights>h1,
+.reserve>h2{
+  text-align: center;
+}
+
+.philisophy>p,
+.philisophies>div>p,
+.ambiance>p,
+.delights>p{
+  margin: 5px 5%;
+}

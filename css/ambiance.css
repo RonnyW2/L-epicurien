@@ -1,0 +1,66 @@
+.ambiance{
+  font-size: calc(var(--font-size)*0.5);
+  color: var(--text-color);
+  background-image: url("../files/img/ambiance/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px;
+}
+
+.ambiance .my-simple-slider button{
+  border-radius: 10px;
+  color:black;
+  background-color: var(--button-color);
+}
+.my-simple-slider {
+  width: 1000px;
+  overflow: hidden; 
+  position: relative;
+  margin: 20px auto;
+  box-shadow: 0 0 10px var(--button-color);
+}
+
+.slider-wrapper {
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-slide {
+  flex: 0 0 1000px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #333;
+}
+
+.slider-slide img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-prev,
+.slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.slider-prev {
+  left: 10px;
+}
+
+.slider-next {
+  right: 10px;
+}

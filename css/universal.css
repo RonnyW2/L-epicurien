@@ -1,0 +1,66 @@
+body{
+  padding: 0;
+  margin:0;
+  background-color: red;
+}
+
+html{ 
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../files/fonts/Handlee-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.container{
+  font-family:'MyFont';
+  background-image: linear-gradient(to bottom, rgb(48, 0, 3),rgb(63, 35, 8), rgb(148, 107, 26), rgb(180, 139, 56), rgb(187, 169, 141));
+  position: relative;
+  background-color: white;
+  min-height: 100vh;
+  min-width: 100%;
+}
+
+:root{
+  --logo-height:15vh;
+  --logo-width:31vh;
+  --header-bg-color:rgba(0, 0, 0, 0.5);
+  --border: 1px solid green;
+  --button-color:rgb(201, 150, 26);
+  --text-color:white;
+  --font-size:30px;
+}
+
+a,a:visited,a:link,a:hover{
+  text-decoration: none;
+}
+
+header{
+  position: sticky;
+  top:0;
+  width: 100%;
+  height: var(--logo-height);
+  background-color: var(--header-bg-color);
+  z-index: 1;
+}
+
+:focus{
+  box-shadow: 0 0 5px var(--button-color);
+}
+
+p{
+  text-indent: 1em;
+}
+
+footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 40px 20px;
+  font-size: 0.9em;
+}
+
+footer a{
+  color:rgb(18, 50, 196);
+}

@@ -1,0 +1,26 @@
+.reserve{
+  background-image: url("../files/img/reservation/reservation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: 0 0 0 ;
+  box-sizing: border-box;
+}
+
+.reserve select{
+  background-color: rgba(201, 151, 26, 0.849);
+  height: 60px;
+  font-size: calc(var(--font-size)*.75);
+}
+
+.reserve label,
+.reserve button{
+  font-size: calc(var(--font-size)*.75);
+  border-radius: 10px;
+}
+.reserve button{
+  background-color: var(--button-color);
+  height: 60px;
+  border:0;
+}
