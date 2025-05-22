@@ -8,6 +8,12 @@ html{
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'MyFont';
   src: url('../files/fonts/Handlee-Regular.ttf') format('truetype');
@@ -31,6 +37,8 @@ html{
   --button-color:rgb(201, 150, 26);
   --text-color:white;
   --font-size:30px;
+  --slider-width: 90%;
+  --slider-height: 50%;
 }
 
 a,a:visited,a:link,a:hover{
@@ -63,4 +71,15 @@ footer {
 
 footer a{
   color:rgb(18, 50, 196);
+}
+
+button{
+  background-color: var(--button-color);
+  border-width: 0;
+  border-radius: 5px;
+}
+
+label{
+  user-select: none;
+  color:var(--text-color);
 }

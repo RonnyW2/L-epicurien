@@ -19,16 +19,23 @@ loginButton.addEventListener("click", function(){
 
 let slide_count=document.getElementsByClassName("slider-slide").length;
 let i=0;
-let s;console.log(i);
+let s;
+console.log(i);
 const nextButton=document.getElementsByClassName("slider-next")[0];
 
-let goSlide=function(e){
+
+const rootStyles = getComputedStyle(document.documentElement);
+let widthValue = rootStyles.getPropertyValue('--slider-width');
+console.log(widthValue);
+
+function goSlide(e){
   const selection=document.querySelector(".slider-wrapper");
-  s="translateX(calc(-"+e+"*100%/"+slide_count+"))";
+  s="translateX(calc(-"+e+"*"+widthValue+"px))";
   selection.style.transform=s;
+  console.log(s);
 }
 nextButton.addEventListener("click", function(){
-  startAutoPlay();
+  // startAutoPlay();
   i++;
   if(i==slide_count){
     i=0;
@@ -65,3 +72,15 @@ function stopAutoPlay() {
   autoPlayInterval = null;
 }
 startAutoPlay();
+
+
+function updateRootWidthVar() {
+  const container = document.querySelector('.my-simple-slider');
+  const width = container.offsetWidth;
+
+  widthValue=width;
+  document.documentElement.style.setProperty('--slider-width', `${width}px`);
+}
+
+window.addEventListener('load', updateRootWidthVar);
+window.addEventListener('resize', updateRootWidthVar);

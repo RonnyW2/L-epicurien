@@ -35,15 +35,50 @@
 
 .specials>div>img{
   width: 100%;
-  height: 60%;
+  height: 50%;
   object-fit: cover;
   display: block;
 }
 
 .specials>div>h2{
   text-align: center;
+  height: 10%;
+}
+.specials>div>p{
+  height: 40%;
 }
 .specials>div:hover>h2,
 .specials>div:hover>p{
   transform: scaleY(100%);
+}
+
+@media screen and (max-width:600px){
+	.specials>div{
+	  margin: 5px auto;
+	  background-color: rgba(36, 29, 29, 0);
+	  width: 100%;
+	  border-radius: 10px;
+	  padding: 1%;
+	}
+}
+
+@media screen and (min-width:601px) and (max-width:1023px){
+	.specials>div{
+	  margin: 5px auto;
+	  background-color: rgba(36, 29, 29, 0);
+	  width: 50%;
+	  border-radius: 10px;
+	  padding: 1%;
+
+	}
+}
+
+@media screen and (min-width:1024px) and (max-width:1244px){
+	.specials>div{
+	  margin: 5px auto;
+	  background-color: rgba(36, 29, 29, 0);
+	  width: 33%;
+	  border-radius: 10px;
+	  padding: 1%;
+	}
 }

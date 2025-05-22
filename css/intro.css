@@ -6,6 +6,7 @@
   width: 100%;
   z-index:0;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
@@ -16,7 +17,8 @@
   translate:0% -50%;
   color:var(--text-color);
   font-size: calc(var(--font-size)*2);
-  width: max-content;
+  width: fit-content;
+  max-width: 100%;
   left: 5%;
   background-color: rgba(0, 0, 0, 0.418);
   box-shadow: 0 0 50px rgb(0, 0, 0);

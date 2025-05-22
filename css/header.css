@@ -1,9 +1,10 @@
 .logo{
   user-select: none;
   top:50%;
-  scale: 75%;
+  left:2%;
+  zoom: 0.75;
   position: absolute;
-  translate: 0% -50%;
+  translate: 0 -50%;
 }
 
 .logo img{
@@ -22,42 +23,39 @@
   font-size:var(--font-size);
   width: max-content;
 }
-
-.nav-menu{
-  align-items: center;
-  align-content: center;
+.nav-menu .nav-menu-elements{
+    display: flex;
+    gap: 5px;
 }
 
-.nav-menu .nav-menu-elements button{
-  font-weight: bolder;
-  border-radius: 10px;
-  padding:1vw; 
-  border: 0;
-  color:white;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.nav-menu-elements form button[type="submit"]{
-  background-color: var(--button-color);
-}
-
-  #nav-menuButton, label[for="nav-menuButton"]{
-    display: none;
-  }
+@media screen and (min-width:1024px) {
   .nav-menu{
+    align-items: center;
+    align-content: center;
     height: fit-content;
     position: absolute;
     top:50%;
     translate:-1% -50%;
     right: 1%;
   }
-  .nav-menu .nav-menu-elements{
-    display: flex;
-    gap: 10px;
+
+  .nav-menu .nav-menu-elements button{
+    font-weight: bolder;
+    border-radius: 10px;
+    display: block;
+    padding:1vw; 
+    border-width: 0;
+    color:white;
+    background-color: var(--button-color);
   }
+
+  #nav-menuButton{
+    display: none;
+  }
+
   .nav-menu .nav-menu-elements button,
   .nav-menu .nav-menu-elements button *{
-    cursor: pointer;
+      cursor: pointer;
   }
   .nav-menu .nav-menu-elements button>label::after{
     content: "▼";
@@ -71,6 +69,15 @@
   .nav-menu .nav-menu-elements button:has(+ .form-area:focus-within) > label::after{
     transform: rotate(180deg);
   }
+
+  
+
+  .nav-menu-elements form button[type="submit"]{
+    background-color: var(--button-color);
+  }
+
+}
+  
 
 .form-area {
   position: absolute;
@@ -99,7 +106,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-sizing: border-box;
+  width:100%;
 }
 
 .input-box {
@@ -166,3 +173,68 @@
   padding: 0;
   height: 0;
 }
+
+@media screen and (max-width:1023px){
+	.logo{
+	  user-select: none;
+	  top:50%;
+	  zoom: 0.5;
+	  position: absolute;
+	  translate: 0% -50%;
+	}
+
+  @media screen and (orientation:landscape) {
+    .logo{
+      zoom: 0.75;
+    }
+  }
+    .logo .name dt{
+        display: none;
+    }
+    .nav-menu-elements>a,
+    .nav-menu-elements>a *,
+    .nav-menu-elements>button{
+      cursor: pointer;
+      height: 40px;
+      width: 100%;
+    }
+    .nav-menu{
+        transform: scaleY(0);
+        position: absolute;
+        right: 2%;
+        top: 100%;
+        width: 150px;
+        transition: transform 0.3s ease;
+    }
+    .nav-menu-elements{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #nav-menuButton{
+      background-color: var(--button-color);
+      color: var(--text-color);
+      position: absolute;
+      top:50%;
+      right: 2%;
+      width: 150px;
+      transform: translate(0, -50%);
+      z-index: 10;
+      font-size: 200%;
+    }
+
+    #nav-menuButton:focus~.nav-menu,
+    #nav-menuButton~.nav-menu:has(>.nav-menu-elements>*:focus),
+    .nav-menu:has(>.nav-menu-elements button+.form-area>.login-form>.input-box>input:focus),
+    .nav-menu:has(.nav-menu-elements button+ .form-area:focus-within){
+      transform: scaleY(1);  
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-area{
+      top: 0;
+      right: 100%;
+      width:150%;
+    }
+}/*media*/
